@@ -18,7 +18,7 @@
 * On the right side of the window click "New", then paste the Python path you copied earlier
 
 ### Install requirements
-* Using cmd navigate to the directory of the project (ex: cd Desktop\Bolo-de-anos)
+* Using cmd navigate to the directory of the project (ex: `cd Desktop\Bolo-de-anos`)
 
 * Run the command
 
