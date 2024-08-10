@@ -18,7 +18,7 @@ def producer(queue_in: list, queue_out: Queue):
             print(e)
     evnt.set()
 
-def consumer(urls: list, queue_in: Queue, output: list):
+def consumer(queue_in: Queue, output: list):
     while True:
         if (queue_in.empty() and evnt.is_set()):
             break
@@ -39,8 +39,6 @@ def consumer(urls: list, queue_in: Queue, output: list):
         
         output.append(result)
 
-        sleep(0.1)
-
 def main(urls: list):
     product = Queue()
 
@@ -53,7 +51,7 @@ def main(urls: list):
 
     # Call consumer
     #print("consumer")
-    t_cons = Thread(target=consumer, args=(urls, product, output))
+    t_cons = Thread(target=consumer, args=(product, output))
     t_cons.start()
 
     t_prod.join()
